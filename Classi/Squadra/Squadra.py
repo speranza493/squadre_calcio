@@ -1,8 +1,7 @@
 class Squadra:
-    def __init__(self, nome, stadio):
+    def __init__(self,id_, nome):
         self.nome = nome
-        self.stadio = stadio
-        self.spese = []
+        self.ID = id_
 
     def aggiungi_spesa(self, spesa):
         self.spese.append(spesa)

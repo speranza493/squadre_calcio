@@ -1,21 +1,7 @@
-nome_squadra,allenatore,stadio
-Sassari,Ballardini,Vanni Sanna
-Verona,Baroni,Marcantonio Bentegodi
-Napoli,Calzona,Diego Armando Maradona
-Udinese,Cannavaro,Bluenergy
-Salernitana,Colantuono,Arechi
-Roma ,De Rossi,Olimpico
-Frosinone,Di Francesco,Benito Stirpe
-Atalanta,Gasperini ,Gewiss
-Genoa,Gilardino,Luigi Ferraris
-Lecce ,Gotti,Ettore Giardiniero - Via del Mare
-Inter,Inzaghi,San Siro
-Fiorentina,Italiano,Artemio Franchi
-Torino,Juric,Olimpico Grande Torino
-Juventus,Montero,Allianz
-Bologna,Motta,Renato Dall'Ara
-Empoli,Nicola,Carlo Castellani - Computer Gross Arena
-Monza,Palladino,U-Power
-Milan,Pioli,San Siro
-Cagliari,Ranieri,Sant'Elia
-Lazio,Tudor,Olimpico
+id_squadra,nome_squadra
+1,Angela_la_mitica
+2,Elisa_la_stupenda
+3,Marco il magnifico
+4, Odio Giorgio
+5, Paperino non si arrende
+6, Aiutatemi sto impazzendo
