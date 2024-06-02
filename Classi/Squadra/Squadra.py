@@ -1,7 +1,10 @@
 class Squadra:
-    def __init__(self,id_, nome):
+    def __init__(self, id_, nome):
         self.nome = nome
         self.ID = id_
+
+    def __hash__(self):
+        return hash((self.ID, self.nome))
 
     def aggiungi_spesa(self, spesa):
         self.spese.append(spesa)
@@ -10,4 +13,4 @@ class Squadra:
         return sum(spesa.importo for spesa in self.spese)
 
     def __str__(self):
-        return f"Squadra: {self.nome}\n{self.stadio}"
+        return f"Squadra: {self.nome} id: {self.ID}"

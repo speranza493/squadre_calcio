@@ -6,25 +6,23 @@ from Classi.Spese.SpeseRagruppate import *
 from Classi.Squadra.SquadreRagruppate import *
 
 boolD = False
-
-path_file_csv = "Dati/squadre.csv"  # Percorso assoluto del file CSV
-squadreragruppate = Squadreragruppate("..\\..\\Dati\\squadre.csv")
-speseragruppate = ragruppaSpese("..\\..\\Dati\\spese.csv")
+speseragruppate = ragruppaSpese("Dati\\spese.csv")
+squadreragruppate = Squadreragruppate("Dati\\squadre.csv")
 
 
-def visualizza_info_squadra(squadre):
+def visualizza_info_squadra():
 
     print("Informazioni su tutte le squadre:")
-    for squadra in squadre:
+    for squadra in squadreragruppate:
         print(squadra)
-        
-        
 
-def seleziona_squadra_e_visualizza_info():
 
+def seleziona_squadra_e_visualizza_info():  # non funziona
+    # poter selezionare spese totali o altro
     nome_squadra = input("Inserisci il nome della squadra: ")
 
-    squadra_selezionata = next((squadra for squadra in squadre if squadra.nome == nome_squadra), None)
+    squadra_selezionata = next(
+        (squadra for squadra in squadreragruppate if squadra.nome == nome_squadra), None)
     if squadra_selezionata:
         print(squadra_selezionata)
 
@@ -34,6 +32,7 @@ def seleziona_squadra_e_visualizza_info():
     else:
 
         print("Squadra non trovata.")
+
 
 def main_menu():
 
@@ -47,47 +46,28 @@ def main_menu():
 
     choice = input("Scegli un'opzione: ")
 
-    print(f"Scelta utente: {choice}")  # Aggiungi una stampa di debug per verificare l'input dell'utente
+    # Aggiungi una stampa di debug per verificare l'input dell'utente
+    print(f"Scelta utente: {choice}")
 
     return choice
 
 
-
-def printBoolD(frase:str) -> None:
+def printBoolD(frase: str) -> None:
 
     if boolD:
         print(frase)
 
+
 def main():
-    
-
-    printBoolD("Caricamento delle squadre...")
-
-    squadre = load_cv(path_file_csv)
-    if not squadre:
-
-        print("Nessuna squadra caricata. Controlla il file CSV.")
-        return
-
-    printBoolD("Squadre caricate correttamente.")
-
-    printBoolD("Inizio del ciclo principale...")
-
     choice = -1
-
     while choice != 3:
-
         choice = main_menu()
-
         print(f"Hai scelto l'opzione: {choice}")
-
         if choice == "1":
-
-            visualizza_info_squadra(squadre)
-
+            visualizza_info_squadra()
         elif choice == "2":
 
-            seleziona_squadra_e_visualizza_info(squadre)
+            seleziona_squadra_e_visualizza_info()
 
         elif choice == "3":
 
@@ -99,9 +79,5 @@ def main():
             print("Opzione non valida. Riprova.")
 
 
-
-
 if __name__ == "__main__":
     main()
-
-
