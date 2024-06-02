@@ -4,10 +4,24 @@ from Classi.Squadra import *
 from Classi.StadioClass import *
 from utils import *
 
-def visualizza_info_squadra(squadra):
-    print("Informazioni sulla squadra:")
-    print(squadra)
-    print()
+boolD = False
+path_file_csv = "Dati/squadre.csv"  # Percorso assoluto del file CSV
+
+def visualizza_info_squadra(squadre):
+    print("Informazioni su tutte le squadre:")
+    for squadra in squadre:
+        print(squadra)
+        
+        
+def seleziona_squadra_e_visualizza_info():
+    nome_squadra = input("Inserisci il nome della squadra: ")
+    squadra_selezionata = next((squadra for squadra in squadre if squadra.nome == nome_squadra), None)
+    if squadra_selezionata:
+        print(squadra_selezionata)
+        totale_spese = squadra_selezionata.calcola_totale_spese()
+        print("Totale spese:", totale_spese, "euro")
+    else:
+        print("Squadra non trovata.")
 
 def main_menu():
     print("MENU PRINCIPALE")
@@ -18,40 +32,33 @@ def main_menu():
     print(f"Scelta utente: {choice}")  # Aggiungi una stampa di debug per verificare l'input dell'utente
     return choice
 
+
+def printBoolD(frase:str) -> None:
+    if boolD:
+        print(frase)
+
 def main():
-    file_path = "Dati/squadre.csv"  # Percorso assoluto del file CSV
-    print("Caricamento delle squadre...")
-    squadre = carica_squadre_da_csv(file_path)
+    
+    printBoolD("Caricamento delle squadre...")
+    squadre = carica_squadre_da_csv(path_file_csv)
     if not squadre:
         print("Nessuna squadra caricata. Controlla il file CSV.")
         return
-    print("Squadre caricate correttamente.")
-    
-    print("Inizio del ciclo principale...")
-    while True:
+    printBoolD("Squadre caricate correttamente.")
+    printBoolD("Inizio del ciclo principale...")
+    choice = -1
+    while choice != 3:
         choice = main_menu()
         print(f"Hai scelto l'opzione: {choice}")
         if choice == "1":
-            print("Informazioni su tutte le squadre:")
-            for squadra in squadre:
-                visualizza_info_squadra(squadra)
+            visualizza_info_squadra(squadre)
         elif choice == "2":
-            nome_squadra = input("Inserisci il nome della squadra: ")
-            squadra_selezionata = next((squadra for squadra in squadre if squadra.nome == nome_squadra), None)
-            if squadra_selezionata:
-                visualizza_info_squadra(squadra_selezionata)
-                totale_spese = squadra_selezionata.calcola_totale_spese()
-                print("Totale spese:", totale_spese, "euro")
-            else:
-                print("Squadra non trovata.")
+            seleziona_squadra_e_visualizza_info(squadre)
         elif choice == "3":
             print("Arrivederci!")
-            break
+            choice = 3
         else:
             print("Opzione non valida. Riprova.")
-        
-        # Aggiungi una pausa per dare il tempo di leggere i messaggi di debug
-        input("Premi Invio per continuare...")
 
 
 
