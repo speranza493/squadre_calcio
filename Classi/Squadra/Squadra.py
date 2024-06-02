@@ -3,9 +3,6 @@ class Squadra:
         self.nome = nome
         self.ID = id_
 
-    def __hash__(self):
-        return hash((self.ID, self.nome))
-
     def aggiungi_spesa(self, spesa):
         self.spese.append(spesa)
 
