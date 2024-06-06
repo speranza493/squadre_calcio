@@ -35,8 +35,8 @@ def seleziona_squadra_e_visualizza_spese():
     nome_squadra = input("Inserisci il nome della squadra: ").strip()
     squadra_selezionata = speseragruppate.ragruppaSpese.get(nome_squadra)
     if squadra_selezionata is not None:
-        print("\n\nEcco delle spese effettuate \n" +
-              str(squadra_selezionata)+"\n")
+        for x in range(0, len(squadra_selezionata)):
+            print(squadra_selezionata[x])
     else:
         print("Squadra non trovata.")
 

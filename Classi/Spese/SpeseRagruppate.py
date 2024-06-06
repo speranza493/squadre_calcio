@@ -22,7 +22,8 @@ class ragruppaSpese:
                 # Sceglie un importo a caso tra 1000 e 10000
                 importo = random.uniform(1000, 10000)
                 # Crea una data che sia nel 2024
-                data = f"2024-22-22"
+                data = f"{random.randint(
+                    2010, 2024):02d}-{random.randint(1, 12):02d}-{random.randint(1, 28):02d}"
                 spesa = Spesa(categoria, importo, data)
                 list_spese.append(spesa)
             self.ragruppaSpese[nome] = list_spese
