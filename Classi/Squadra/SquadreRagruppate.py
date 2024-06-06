@@ -12,7 +12,6 @@ class Squadreragruppate:
                 squadra = Squadra(
                     riga["nome_squadra"], riga["allenatore"], riga["lubicazione"])
                 self.squadreRagruppate.add(squadra)
-        print(self.squadreRagruppate)
 
     def __iter__(self):
         return self.squadreRagruppate.__iter__()
