@@ -7,6 +7,7 @@ from .Spesa import *
 
 
 class ragruppaSpese:
+    # In questa classe definisco le spese di ogni squadra, creandole da 0 con un random
 
     def __init__(self, lista_squadre:  set[Squadra]):
         self.ragruppaSpese: {str: [Spesa]} = {}
@@ -20,8 +21,8 @@ class ragruppaSpese:
                 # Sceglie una categoria random
                 categoria = random.choice(categorie)
                 # Sceglie un importo a caso tra 1000 e 10000
-                importo = random.uniform(1000, 10000)
-                # Crea una data che sia nel 2024
+                importo = random.randint(1000, 1000000)
+                # Crea una data che sia tra il 2010-2024
                 data = f"{random.randint(
                     2010, 2024):02d}-{random.randint(1, 12):02d}-{random.randint(1, 28):02d}"
                 spesa = Spesa(categoria, importo, data)

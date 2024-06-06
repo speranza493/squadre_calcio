@@ -6,14 +6,13 @@ from Classi.Spese.SpeseRagruppate import *
 from Classi.Squadra.SquadreRagruppate import *
 
 
-boolD = False
 squadreragruppate: Squadreragruppate = Squadreragruppate("Dati\\squadre.csv")
 speseragruppate: ragruppaSpese = ragruppaSpese(
     squadreragruppate.squadreRagruppate)
 
 
 def visualizza_info_squadra():
-
+    # in questa funzione visualizzo tutte le informzioni delle squadre
     print("Informazioni su tutte le squadre:\n")
     for squadra in squadreragruppate:
         print(squadra)
@@ -21,6 +20,7 @@ def visualizza_info_squadra():
 
 
 def seleziona_squadra_e_visualizza_info():
+    # In questa funzione visualizzo le informaizoni di una sola squadra
     nome_squadra = input("Inserisci il nome della squadra: ")
 
     squadra_selezionata = next(
@@ -32,6 +32,7 @@ def seleziona_squadra_e_visualizza_info():
 
 
 def seleziona_squadra_e_visualizza_spese():
+    # In questa funzione visuazlizzo le spese di una squadra specifica
     nome_squadra = input("Inserisci il nome della squadra: ").strip()
     squadra_selezionata = speseragruppate.ragruppaSpese.get(nome_squadra)
     if squadra_selezionata is not None:
@@ -42,6 +43,7 @@ def seleziona_squadra_e_visualizza_spese():
 
 
 def seleziona_squadra_e_visualizza_spese_totali():
+    # In questa funzione visualizzo le spese totali di una squadra specifica
     nome_squadra = input("Inserisci il nome della squadra: ").strip()
     squadra_selezionata = speseragruppate.ragruppaSpese.get(nome_squadra)
     if squadra_selezionata is not None:
@@ -80,12 +82,6 @@ def main_menu():
     return choice
 
 
-def printBoolD(frase: str) -> None:
-
-    if boolD:
-        print(frase)
-
-
 def main():
     choice = -1
     while choice != 0:
@@ -97,7 +93,6 @@ def main():
             seleziona_squadra_e_visualizza_info()
 
         elif choice == "3":
-            # ! non stanmpa in modo corretto le classi ma il codice funziona
             seleziona_squadra_e_visualizza_spese()
 
         elif choice == "4":
