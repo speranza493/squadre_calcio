@@ -26,13 +26,8 @@ def seleziona_squadra_e_visualizza_info():  # non funziona
     squadra_selezionata = next(
         (squadra for squadra in squadreragruppate if squadra.nome == nome_squadra), None)
     if squadra_selezionata:
-        print(squadra_selezionata)
-
-        totale_spese = squadra_selezionata.calcola_totale_spese()
-
-        print("Totale spese:", totale_spese, "euro")
+        print("\n\nEcco delle info: \n"+str(squadra_selezionata)+"\n")
     else:
-
         print("Squadra non trovata.")
 
 

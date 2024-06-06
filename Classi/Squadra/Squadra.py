@@ -8,4 +8,4 @@ class Squadra:
         self.lubicazione = lubicazione
 
     def __str__(self):
-        return f"Squadra: {self.nome} id: {self.ID}"
+        return f"Squadra: {self.nome} allenatore: {self.allenatore} e lubicazione: {self.lubicazione}"

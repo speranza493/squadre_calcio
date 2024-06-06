@@ -1,8 +1,9 @@
-from Spesa import *
+
 from ..utils import *
 from .CategoriaSpesa import *
 from ..Squadra.SquadreRagruppate import *
 import random
+from .Spesa import *
 
 
 class ragruppaSpese:
