@@ -1,13 +1,11 @@
+from ..Spese.Spesa import *
+
+
 class Squadra:
-    def __init__(self, id_, nome):
+    def __init__(self,  nome: str, allenatore: str, lubicazione: str):
         self.nome = nome
-        self.ID = id_
-
-    def aggiungi_spesa(self, spesa):
-        self.spese.append(spesa)
-
-    def calcola_totale_spese(self):
-        return sum(spesa.importo for spesa in self.spese)
+        self.allenatore = allenatore
+        self.lubicazione = lubicazione
 
     def __str__(self):
         return f"Squadra: {self.nome} id: {self.ID}"

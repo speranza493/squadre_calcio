@@ -1,7 +1,7 @@
-id_squadra,nome_squadra
-1,Angela_la_mitica
-2,Elisa_la_stupenda
-3,Marco il magnifico
-4, Odio Giorgio
-5, Paperino non si arrende
-6, Aiutatemi sto impazzendo
+nome_squadra,allenatore,lubicazione
+Angela_la_mitica,,
+Elisa_la_stupenda,,
+Marco il magnifico,,
+ Odio Giorgio,,
+ Paperino non si arrende,,
+  Aiutatemi sto impazzendo,,

@@ -5,9 +5,11 @@ from Classi.utils import *
 from Classi.Spese.SpeseRagruppate import *
 from Classi.Squadra.SquadreRagruppate import *
 
+
 boolD = False
-speseragruppate = ragruppaSpese("Dati\\spese.csv")
-squadreragruppate = Squadreragruppate("Dati\\squadre.csv")
+squadreragruppate: Squadreragruppate = Squadreragruppate("Dati\\squadre.csv")
+speseragruppate: ragruppaSpese = ragruppaSpese(
+    squadreragruppate.squadreRagruppate)
 
 
 def visualizza_info_squadra():
