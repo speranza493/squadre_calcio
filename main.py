@@ -100,7 +100,7 @@ def main():
 
         elif choice == "0":
 
-            print("Arrivederci PUTTANA!")
+            print("Arrivederci!")
 
             choice = 0
         else:
